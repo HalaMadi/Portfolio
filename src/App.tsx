@@ -1,8 +1,11 @@
 import React from 'react'
+import MenuAppBar from './component/AppBar/MenuAppBar'
 
-function App() {
+const App:React.FC=()=> {
   return (
-    <div>App</div>
+    <>
+    <MenuAppBar/>
+    </>
   )
 }
 
