@@ -5,16 +5,16 @@ import {
   Box,
   IconButton,
   Menu,
-  MenuItem,
   Button,
 } from "@mui/material";
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { StyledAppBar ,StyledButton} from "./style";
-import AnimatedCursor from 'react-animated-cursor';
+import { StyledAppBar, StyledButton } from "./style";
+import { NavLink } from "react-router-dom";
+// import AnimatedCursor from 'react-animated-cursor';
 
 const pages = ["Home", "Service", "Work", "Contact"];
-const MenuAppBar:React.FC=()=> {
+const MenuAppBar: React.FC = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -26,7 +26,7 @@ const MenuAppBar:React.FC=()=> {
   };
   return (
     <>
-     <AnimatedCursor
+      {/* <AnimatedCursor
         innerSize={8}
         outerSize={30}
         color="#f58f7c"
@@ -46,8 +46,8 @@ const MenuAppBar:React.FC=()=> {
           'button',
           '.link'
         ]}
-      />
-      <StyledAppBar position="static" >
+      /> */}
+      <StyledAppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
@@ -95,9 +95,13 @@ const MenuAppBar:React.FC=()=> {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem  key={page} onClick={handleCloseNavMenu}>
-                    <Typography  textAlign="center">{page}</Typography>
-                  </MenuItem>
+                  <NavLink
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    to={`/${page.toLowerCase()}`}
+                  >
+                    <Typography textAlign="center">{page}</Typography>
+                  </NavLink>
                 ))}
               </Menu>
             </Box>
@@ -124,26 +128,43 @@ const MenuAppBar:React.FC=()=> {
                 justifyContent: "center",
                 flexGrow: 1,
                 display: { xs: "none", md: "flex" },
+                gap:4
               }}
             >
               {pages.map((page) => (
                 <Button
+                component={NavLink}
+                to={`/${page.toLowerCase()}`}
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "black", display: "block",fontWeight:'500' ,fontSize:'18px'}}
+                  sx={{
+                    my: 2,
+                    color: "black",
+                    display: "block",
+                    fontWeight: "500",
+                    fontSize: "18px",
+                    textDecoration: 'none',
+                    transition: 'none',
+                    "&.active": {
+                      color: '#F58F7C',
+                    },
+                    "&:hover": {
+                      backgroundColor: 'transparent', 
+                    },
+                  }}
                 >
                   {page}
                 </Button>
               ))}
             </Box>
             <Box>
-            <StyledButton variant="contained">Hire Me</StyledButton>
+              <StyledButton variant="contained">Hire Me</StyledButton>
             </Box>
           </Toolbar>
         </Container>
       </StyledAppBar>
     </>
   );
-}
+};
 
 export default MenuAppBar;

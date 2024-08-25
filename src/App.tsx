@@ -1,10 +1,10 @@
 import React from 'react'
-import MenuAppBar from './component/AppBar/MenuAppBar'
+import Routes from './Routes/Routes'
 
 const App:React.FC=()=> {
   return (
     <>
-    <MenuAppBar/>
+    <Routes/>
     </>
   )
 }
