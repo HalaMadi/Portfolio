@@ -15,8 +15,7 @@ export const StyledAppBar = styled(AppBar)`
 export const StyledButton = styled(Button)`
   && {
     border-radius: 25px;
-    background-color: #f58f7c;
-    border: 2px solid #f58f7c;
+    background-color: #BD6E73;
     font-weight: 600;
     font-size:16px;
     padding: 8px 16px; 
@@ -24,7 +23,7 @@ export const StyledButton = styled(Button)`
     border-color 0.3s ease;
     box-shadow: none;
     &:hover {
-      color: #f58f7c;
+      color: #BD6E73;
       background-color: transparent;
       border-color: #f58f7c;
     }

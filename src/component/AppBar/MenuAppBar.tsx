@@ -11,6 +11,7 @@ import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { StyledAppBar, StyledButton } from "./style";
 import { NavLink } from "react-router-dom";
+import Logo from '../../assets/Hala-dev.png'
 // import AnimatedCursor from 'react-animated-cursor';
 
 const pages = ["Home", "Service", "Work", "Contact"];
@@ -50,21 +51,14 @@ const MenuAppBar: React.FC = () => {
       <StyledAppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Typography
-              variant="h6"
-              noWrap
+            <Box
+            component='img'
+            src={Logo}
               sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontWeight: 400,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-                fontFamily: "Helvetica now",
+               maxWidth:'15%',
+               height:'auto'
               }}
-            >
-              Hala-Dev
-            </Typography>
+            />            
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
                 size="large"
@@ -128,13 +122,13 @@ const MenuAppBar: React.FC = () => {
                 justifyContent: "center",
                 flexGrow: 1,
                 display: { xs: "none", md: "flex" },
-                gap:4
+                gap: 4,
               }}
             >
               {pages.map((page) => (
                 <Button
-                component={NavLink}
-                to={`/${page.toLowerCase()}`}
+                  component={NavLink}
+                  to={`/${page.toLowerCase()}`}
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{
@@ -143,13 +137,13 @@ const MenuAppBar: React.FC = () => {
                     display: "block",
                     fontWeight: "500",
                     fontSize: "18px",
-                    textDecoration: 'none',
-                    transition: 'none',
+                    textDecoration: "none",
+                    transition: "none",
                     "&.active": {
-                      color: '#F58F7C',
+                      color: "#BD6E73",
                     },
                     "&:hover": {
-                      backgroundColor: 'transparent', 
+                      backgroundColor: "transparent",
                     },
                   }}
                 >
