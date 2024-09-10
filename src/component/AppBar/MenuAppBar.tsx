@@ -1,122 +1,77 @@
 import {
-  Container,
   Toolbar,
-  Typography,
   Box,
   IconButton,
-  Menu,
-  Button,
+  Stack,
+  Drawer,
 } from "@mui/material";
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { StyledAppBar, StyledButton } from "./style";
-import { NavLink } from "react-router-dom";
-import Logo from '../../assets/Hala-dev.png'
-// import AnimatedCursor from 'react-animated-cursor';
-
-const pages = ["Home", "Service", "Work", "Contact"];
+import { RouterNavLink, StyledAppBar, StyledButton } from "./style";
+import Logo from "../../assets/Hala-dev.png";
+const pages = ["Home", "About me", "Work", "Contact", "Projects"];
 const MenuAppBar: React.FC = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+  const [open, setOpen] = React.useState(false);
+  const toggleDrawer = (newOpen: boolean) => () => {
+    //higher-order function, meaning it returns another function.
+    setOpen(newOpen);
   };
   return (
     <>
-      {/* <AnimatedCursor
-        innerSize={8}
-        outerSize={30}
-        color="#f58f7c"
-        outerAlpha={0.4}
-        innerScale={1} 
-        outerScale={2}  
-        clickables={[
-          'a',
-          'input[type="text"]',
-          'input[type="email"]',
-          'input[type="number"]',
-          'input[type="submit"]',
-          'input[type="image"]',
-          'label[for]',
-          'select',
-          'textarea',
-          'button',
-          '.link'
-        ]}
-      /> */}
-      <StyledAppBar position="static">
-        <Container maxWidth="xl">
+      <StyledAppBar position="sticky">
           <Toolbar disableGutters>
             <Box
-            component='img'
-            src={Logo}
+              component="img"
+              src={Logo}
               sx={{
-               maxWidth:'15%',
-               height:'auto'
+                maxWidth: { xs: "40%", sm: "25%", md: "16%" },
               }}
-            />            
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            />
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "flex", md: "none" },
+                justifyContent: "flex-end",
+              }}
+            >
               <IconButton
                 size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
+                aria-label="open drawer"
                 color="inherit"
+                onClick={toggleDrawer(true)}
               >
                 <MenuIcon />
               </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
+              {/* Drawer for mobile menu */}
+              <Drawer
+                anchor="top"
+                open={open}
+                onClick={toggleDrawer(false)}
                 sx={{
-                  display: { xs: "block", md: "none" },
+                  width: "100%", // Width of the drawer
+                  "& .MuiDrawer-paper": {
+                    width: "100%", // Ensure the drawer paper also has the correct width
+                  },
                 }}
               >
-                {pages.map((page) => (
-                  <NavLink
-                    key={page}
-                    onClick={handleCloseNavMenu}
-                    to={`/${page.toLowerCase()}`}
-                  >
-                    <Typography textAlign="center">{page}</Typography>
-                  </NavLink>
-                ))}
-              </Menu>
+                <Stack sx={{ padding: 2 }} spacing={2}>
+                  {pages.map((page) => (
+                    <RouterNavLink
+                      key={page}
+                      to={`/${page.toLowerCase()}`}
+                      isActive={
+                        window.location.pathname === `/${page.toLowerCase()}`
+                      }
+                    >
+                      {page}
+                    </RouterNavLink>
+                  ))}
+                  <StyledButton variant="contained" sx={{ width: "130px" }}>
+                    Hire Me
+                  </StyledButton>
+                </Stack>
+              </Drawer>
             </Box>
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="#app-bar-with-responsive-menu"
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontWeight: 400,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-                fontFamily: "Helvetica now",
-              }}
-            >
-              Hala-Dev
-            </Typography>
             <Box
               sx={{
                 justifyContent: "center",
@@ -126,36 +81,21 @@ const MenuAppBar: React.FC = () => {
               }}
             >
               {pages.map((page) => (
-                <Button
-                  component={NavLink}
-                  to={`/${page.toLowerCase()}`}
+                <RouterNavLink
                   key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    color: "black",
-                    display: "block",
-                    fontWeight: "500",
-                    fontSize: "18px",
-                    textDecoration: "none",
-                    transition: "none",
-                    "&.active": {
-                      color: "#BD6E73",
-                    },
-                    "&:hover": {
-                      backgroundColor: "transparent",
-                    },
-                  }}
+                  to={`/${page.toLowerCase()}`}
+                  isActive={
+                    window.location.pathname === `/${page.toLowerCase()}`
+                  }
                 >
                   {page}
-                </Button>
+                </RouterNavLink>
               ))}
             </Box>
-            <Box>
+            <Box sx={{ display: { xs: "none", md: "block" } }}>
               <StyledButton variant="contained">Hire Me</StyledButton>
             </Box>
           </Toolbar>
-        </Container>
       </StyledAppBar>
     </>
   );

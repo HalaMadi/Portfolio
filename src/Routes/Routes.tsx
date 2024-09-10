@@ -3,13 +3,18 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Root";
 import Contact from "../component/Contact/Contact";
 import Home from "../component/Home/Home";
-       // Add your Work component
+import AboutMe from "../component/AboutMe/AboutMe";
+// Add your Work component
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     children: [
+      {
+        index: true,
+        element: <Home />,
+      },
       {
         path: "contact",
         element: <Contact />,
@@ -24,7 +29,10 @@ const router = createBrowserRouter([
       },
       {
         path: "home",
-        element: <Home/>,
+        element: <Home />,
+      },  {
+        path: "About me",
+        element: <AboutMe />,
       },
     ],
   },

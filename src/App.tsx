@@ -1,12 +1,15 @@
-import React from 'react'
-import Routes from './Routes/Routes'
-
-const App:React.FC=()=> {
+import React from "react";
+import Routes from "./Routes/Routes";
+import "./index.css";
+import { Container } from "@mui/material";
+const App: React.FC = () => {
   return (
     <>
-    <Routes/>
+      <Container maxWidth="lg">
+        <Routes />
+      </Container>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
