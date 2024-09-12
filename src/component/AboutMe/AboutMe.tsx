@@ -10,7 +10,6 @@ const AboutMe: React.FC = () => {
     { label: "Completed Projects", value: 10 },
     { label: "Ongoing Projects", value: 3 },
   ];
-
   return (
     <>
       <StyledBox sx={{ mt: { xs: "0px", sm: "30px", md: "60px" } }}>
@@ -20,19 +19,19 @@ const AboutMe: React.FC = () => {
               component="img"
               src={AboutMePic}
               sx={{
-                height: { xs: "300px", md: "450px" },
+                height: { xs: "300px", md: "460px" },
               }}
             />
           </Grid>
-          <Grid size={{ xs: 12, sm: 4, md: 7 }}>
+          <Grid size={{ xs: 12, sm: 4, md: 7 }} sx={{mt:4}}>
             <Typography
-              sx={{ fontFamily: "outfit", fontSize: "36px", fontWeight: 600 }}
+              sx={{ fontFamily: "outfit", fontSize: "24px", fontWeight: 600 }}
               gutterBottom
             >
               I am a Software Engineering
             </Typography>
             <Typography
-              sx={{ fontFamily: "outfit", mb: "15px", fontWeight: 600 }}
+              sx={{ fontFamily: "outfit", mb: "15px",fontSize:'18px' }}
               gutterBottom
             >
               Experienced Frontend Developer with over a decade of professional
@@ -41,20 +40,20 @@ const AboutMe: React.FC = () => {
               contributing to their success and growth.
             </Typography>
             <Typography
-              sx={{ fontFamily: "outfit", mb: "15px", fontWeight: 600 }}
+              sx={{ fontFamily: "outfit",fontSize:'18px'}}
             >
               My passion for frontend development is not only reflected in my
               extensive experience but also in the enthusiasm and dedication I
               bring to each project.
             </Typography>
+         
             <Divider sx={{ m: 5 }} />
             <Box>
               <Grid
                 sx={{
                   mt: "8px",
                   display: "flex",
-                  justifyContent: "space-around",
-                  width: "100%",
+                  justifyContent: "space-between",
                 }}
               >
                 {data.map((item, index) => (
@@ -72,9 +71,6 @@ const AboutMe: React.FC = () => {
                         variant="h6"
                         sx={{
                           fontWeight: "bold",
-                          background:
-                            "linear-gradient(90deg, rgba(191,136,140,1) 0%, rgba(93,140,86,1) 36%, rgba(242,242,242,1) 92%)",
-                          backgroundClip: "text",
                         }}
                       >
                         +{item.value}

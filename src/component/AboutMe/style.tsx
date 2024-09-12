@@ -10,6 +10,5 @@ export const StyledBox = styled(Box)`
     width: 100vw;
     flexGrow: 1;
     padding: 20px;
-    height:500px;
   }
 `;

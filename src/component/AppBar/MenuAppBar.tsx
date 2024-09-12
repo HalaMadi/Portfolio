@@ -9,7 +9,7 @@ import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { RouterNavLink, StyledAppBar, StyledButton } from "./style";
 import Logo from "../../assets/Hala-dev.png";
-const pages = ["Home", "About me", "Work", "Contact", "Projects"];
+const pages = ["Home", "About me", "Skills", "Projects", "Contact"];
 const MenuAppBar: React.FC = () => {
   const [open, setOpen] = React.useState(false);
   const toggleDrawer = (newOpen: boolean) => () => {
