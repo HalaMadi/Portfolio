@@ -5,6 +5,7 @@ import Contact from "../component/Contact/Contact";
 import Home from "../component/Home/Home";
 import AboutMe from "../component/AboutMe/AboutMe";
 import Skills from "../component/Skills/Skills";
+import Projects from "../component/Projects/Projects";
 // Add your Work component
 
 const router = createBrowserRouter([
@@ -25,8 +26,8 @@ const router = createBrowserRouter([
         element: <Skills/>,
       },
       {
-        path: "work",
-        element: <h1>work</h1>,
+        path: "Projects",
+        element: <Projects/>,
       },
       {
         path: "home",

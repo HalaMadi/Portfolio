@@ -4,13 +4,13 @@ import styled from "styled-components";
 
 export const StyledAppBar = styled(AppBar)`
   && {
-    background-color: unset;
-    box-shadow: none;
-    padding: 0;
-    margin: 0;
-    min-height: auto;
-    color: black;
-    cursor: visible;
+    // background-color: unset;
+    // box-shadow: none;
+    // padding: 0;
+    // margin: 0;
+    // min-height: auto;
+    // color: black;
+    // cursor: visible;
   }
 `;
 export const StyledButton = styled(Button)`

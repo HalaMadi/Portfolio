@@ -4,6 +4,8 @@ import React from "react";
 import profileImg from "../../assets/Untitled design.png";
 import AboutMe from "../AboutMe/AboutMe";
 import Skills from "../Skills/Skills";
+import Contact from "../Contact/Contact";
+import Projects from "../Projects/Projects";
 
 const Home: React.FC = () => {
   return (
@@ -26,7 +28,9 @@ const Home: React.FC = () => {
                 sx={{
                   color: "#1A2614",
                   fontSize: { xs: "40px", sm: "45px", md: "100px" },
-                  fontFamily: "Inter",
+                  fontFamily: 'Sail ,system-ui',
+                  fontWeight: '400',
+                  fontStyle: 'normal',
                   lineHeight: 1,
                 }}
               >
@@ -42,10 +46,7 @@ const Home: React.FC = () => {
                 Front-End Developer
               </Typography>
               <Box sx={{ mt: "30px", display: "flex", gap: 2 }}>
-                <Button
-                  variant="contained"
-                  sx={{ backgroundColor: "#BD6E73" }}
-                >
+                <Button variant="contained" sx={{ backgroundColor: "#BD6E73" }}>
                   Download CV
                 </Button>
                 <Button
@@ -103,6 +104,8 @@ const Home: React.FC = () => {
             Skills
           </Typography>
           <Skills />
+          <Projects />
+          <Contact />
         </Box>
       </Box>
     </>
