@@ -15,8 +15,7 @@ const Footer: React.FC = () => {
         position: "relative",
         left: "50%",
         transform: "translateX(-50%)",
-        width: "100vw",
-        background:
+        backgroundImage:
           "radial-gradient(125% 125% at 50% 10%, #fff 40%, #BD6E73 100%)",
         py: 4,
         mt: "auto", // Ensures footer stays at the bottom
@@ -56,7 +55,7 @@ const Footer: React.FC = () => {
               {" "}
               <InstagramIcon
                 fontSize="large"
-                sx={{ cursor: "pointer", color: "#bf888c" }}
+                sx={{ cursor: "pointer", color: "#bf988C" }}
               />
             </Link>
             <Link target="_blank" to={"https://www.facebook.com/hla.alzalaan"}>

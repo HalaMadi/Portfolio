@@ -1,11 +1,17 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
 import "swiper/css";
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 import styled from "styled-components";
 
 import html5 from "../../assets/skills/html-5.png";
@@ -33,72 +39,88 @@ const skillsIcon = [
 
 // Styled Components for Swiper Pagination and Navigation
 const StyledSwiperContainer = styled(Box)`
-
-
   .swiper-button-next,
   .swiper-button-prev {
-    color: #BD6E73; /* Changes arrow color */
+    color: #bd6e73; /* Changes arrow color */
     width: 30px; /* Adjusts arrow size */
     height: 30px;
   }
 
   .swiper-button-next:hover,
   .swiper-button-prev:hover {
-    color: #FF69B4; /* Hover color for arrows */
+    color: #ff69b4; /* Hover color for arrows */
   }
 `;
 
 const Skills: React.FC = () => {
   return (
-    <StyledSwiperContainer sx={{ mt: '50px' }}>
-      <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-        slidesPerView={4}
-        navigation
-        loop={true}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
-        breakpoints={{
-          320: { slidesPerView: 1 },
-          480: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 },
-        }}
-      >
-        {skillsIcon.map((Icon, index) => (
-          <SwiperSlide key={index}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "10px",
-              }}
-            >
-              {/* Icon Image */}
+    <Container>
+      <Box sx={{ justifyContent: "center", display: "flex", m: "25px" }}>
+        <Typography
+          sx={{
+            fontWeight: "bold",
+            fontSize: { xs: "28px", sm: "32px", md: "36px" },
+            display: "flex",
+            gap: { xs: "8px", md: "16px" },
+            fontFamily: "Kaushan Script, cursive",
+            m: "20px",
+          }}
+        >
+          <Box sx={{ color: "#BD6E73", fontSize: "inherit" }}>&lt;</Box>
+          Skills
+          <Box sx={{ color: "#BD6E73", fontSize: "inherit" }}>/&gt;</Box>
+        </Typography>
+      </Box>
+      <StyledSwiperContainer sx={{ mt: "50px" }}>
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          slidesPerView={4}
+          navigation
+          loop={true}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            480: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+          }}
+        >
+          {skillsIcon.map((Icon, index) => (
+            <SwiperSlide key={index}>
               <Box
-                component="img"
-                src={Icon.src}
-                alt={Icon.alt}
-                loading="lazy"
-              />
-
-              {/* Icon Name */}
-              <Typography
-                variant="subtitle1"
                 sx={{
-                  fontSize: "16px",
-                  fontWeight: 600,
-                  color: "#333",
-                  fontFamily: 'Sail, cursive',
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: "10px",
                 }}
               >
-                {Icon.name}
-              </Typography>
-            </Box>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </StyledSwiperContainer>
+                {/* Icon Image */}
+                <Box
+                  component="img"
+                  src={Icon.src}
+                  alt={Icon.alt}
+                  loading="lazy"
+                />
+
+                {/* Icon Name */}
+                <Typography
+                  variant="subtitle1"
+                  sx={{
+                    fontSize: "16px",
+                    fontWeight: 600,
+                    color: "#333",
+                    fontFamily: "Sail, cursive",
+                  }}
+                >
+                  {Icon.name}
+                </Typography>
+              </Box>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </StyledSwiperContainer>
+    </Container>
   );
 };
 
