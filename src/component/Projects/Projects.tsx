@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <Container>
+    <Container >
       <Box sx={{ flexGrow: 1, mt: { xs: "0px", sm: "30px", md: "60px" } }}>
         <Box
           sx={{

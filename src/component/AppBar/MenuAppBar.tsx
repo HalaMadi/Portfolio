@@ -104,6 +104,7 @@ const MenuAppBar: React.FC = () => {
                   spy={true}
                   smooth={true}
                   duration={500}
+                  offset={-70}
                 >
                   {page}
                 </RouterNavLink>

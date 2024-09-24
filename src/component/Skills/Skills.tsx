@@ -54,8 +54,11 @@ const StyledSwiperContainer = styled(Box)`
 
 const Skills: React.FC = () => {
   return (
-    <Container>
-      <Box sx={{ justifyContent: "center", display: "flex", m: "25px" }}>
+    <Box sx={{ 
+      m: '130px 0px', 
+      }}>
+    <Container >
+      <Box sx={{ justifyContent: "center", display: "flex"}}>
         <Typography
           sx={{
             fontWeight: "bold",
@@ -63,7 +66,6 @@ const Skills: React.FC = () => {
             display: "flex",
             gap: { xs: "8px", md: "16px" },
             fontFamily: "Kaushan Script, cursive",
-            m: "20px",
           }}
         >
           <Box sx={{ color: "#BD6E73", fontSize: "inherit" }}>&lt;</Box>
@@ -121,6 +123,7 @@ const Skills: React.FC = () => {
         </Swiper>
       </StyledSwiperContainer>
     </Container>
+    </Box>
   );
 };
 

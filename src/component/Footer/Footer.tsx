@@ -16,10 +16,10 @@ const Footer: React.FC = () => {
         left: "50%",
         transform: "translateX(-50%)",
         backgroundImage:
-          "radial-gradient(125% 125% at 50% 10%, #fff 40%, #BD6E73 100%)",
+          "radial-gradient(125% 125% at 50% 10%, #fff 40%, #BD6E73)",
         py: 4,
-        mt: "auto", // Ensures footer stays at the bottom
-        zIndex: 10, // Stays above the gradient
+        mt: "auto", 
+        zIndex: 10, 
       }}
     >
       <Container>
