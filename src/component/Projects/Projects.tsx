@@ -34,13 +34,13 @@ const Projects: React.FC = () => {
 
   return (
     <Container >
-      <Box sx={{ flexGrow: 1, mt: { xs: "0px", sm: "30px", md: "60px" } }}>
+      <Box sx={{ flexGrow: 1, mt: { xs: "0px", sm: "30px", md: "60px" }, mb: "150px", }}>
         <Box
           sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            mt: "100px",
+           
           }}
         >
           <Typography

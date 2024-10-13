@@ -12,7 +12,7 @@ import { StyledButton } from "./style";
 const Home: React.FC = () => {
   return (
     <>
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1,mt:'40px' }}>
       <Element name="home">
           <Container maxWidth="lg">
             <Grid container spacing={2} alignItems="center">
