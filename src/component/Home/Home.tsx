@@ -1,112 +1,164 @@
 import { Typography, Box, Button, Container } from "@mui/material";
-import Grid from "@mui/material/Grid2";
 import React from "react";
-import profileImg from "../../assets/Untitled design.png";
 import AboutMe from "../AboutMe/AboutMe";
 import Skills from "../Skills/Skills";
 import Contact from "../Contact/Contact";
 import Projects from "../Projects/Projects";
 import { Element, Link } from "react-scroll";
-import { StyledButton } from "./style";
-
+import { motion } from "framer-motion";
+import svgPic from "../../assets/svg/polygon-scatter-haikei.svg";
 const Home: React.FC = () => {
   return (
     <>
-        <Box sx={{ flexGrow: 1,mt:'40px' }}>
-      <Element name="home">
-          <Container maxWidth="lg">
-            <Grid container spacing={2} alignItems="center">
-              <Grid size={{ xs: 12, sm: 6, md: 7 }}>
-                <Box sx={{ justifyContent: { xs: "space-between" } }}>
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      color: "#BF888C",
-                      fontSize: "24px",
-                      fontWeight: "600",
-                      fontFamily: "Playfair Display, serif",
-                    }}
-                  >
-                    Hi, I'm
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontSize: { xs: "40px", sm: "45px", md: "100px" },
-                      fontFamily: "Playfair Display, serif",
-                      lineHeight: 1,
-                    }}
-                  >
-                    Hala Madi
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontSize: { xs: "20px", sm: "25px", md: "45px" },
-                      fontFamily: "Playfair Display, serif",
-                    }}
-                  >
-                    Front-End Developer
-                  </Typography>
-                  <Box sx={{ mt: "30px", display: "flex", gap: 2 }}>
-                    <Button
-                      variant="contained"
-                      sx={{ backgroundColor: "#BD6E73" }}
-                      href="/HalaMadiCV.pdf"
-                      download="Hala Madi CV.pdf"
-                    >
-                      Download CV
-                    </Button>
-                    <StyledButton
-                      variant="outlined"
-                      sx={{
-                        borderColor: "#BD6E73",
-                        color: "#BD6E73",
-                        fontSize: "16px",
-                        fontWeight: "500",
-                      }}
-                    >
-                      <Link
-                        to="contact"
-                        smooth={true}
-                        duration={500}
-                        offset={-70}
-                      >
-                        Hire Me
-                      </Link>
-                    </StyledButton>
-                  </Box>
-                </Box>
-              </Grid>
-              <Grid size={{ xs: 12, sm: 6, md: 5 }}>
-                <Box
-                  component="img"
-                  src={profileImg}
+      <Box
+        sx={{
+          backgroundImage: `url(${svgPic})`,
+          backgroundSize: "cover",
+          minHeight: {sm:'50vh',md:'90vh'},
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
+        <Element name="home">
+          <Container>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                m: "30px",
+                p: "20px",
+                // backgroundColor: "#F9F5F6",
+                // borderRadius: "12px",
+                // boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <Typography
+                component={motion.p}
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.2,
+                  x: { type: "spring", stiffness: 60 },
+                  ease: "easeIn",
+                  duration: 1,
+                  opacity: { duration: 1 },
+                }}
+                variant="caption"
+                sx={{
+                  color: "#BF888C",
+                  fontSize: "24px",
+                  fontWeight: "300",
+                  fontFamily: "Inter, serif",
+                  letterSpacing: "1px",
+                }}
+              >
+                Hi, I'm
+              </Typography>
+              <Typography
+                component={motion.p}
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.2,
+                  x: { type: "spring", stiffness: 60 },
+                  ease: "easeIn",
+                  duration: 1,
+                  opacity: { duration: 0.6 },
+                }}
+                sx={{
+                  fontSize: { xs: "50px", sm: "90px", md: "100px" },
+                  fontFamily: "Inter, serif",
+                  lineHeight: 1,
+                  color: "#333",
+                }}
+              >
+                Hala Madi
+              </Typography>
+              <Typography
+                component={motion.p}
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.4,
+                  x: { type: "spring", stiffness: 60 },
+                  ease: "easeIn",
+                  duration: 1,
+                  opacity: { duration: 0.6 },
+                }}
+                sx={{
+                  fontSize: { xs: "22px", sm: "40px", md: "40px" },
+                  fontFamily: "Inter, serif",
+                  color: "#BD6E73",
+                  fontWeight: "500",
+                }}
+              >
+                Front-End Developer
+              </Typography>
+              <Box
+                component={motion.div}
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{
+                  delay: 1,
+                  x: { type: "spring", stiffness: 60 },
+                  ease: "easeIn",
+                  duration: 1,
+                  opacity: { duration: 0.6 },
+                }}
+                sx={{ mt: "30px", display: "flex",flexDirection:{xs:'column',sm:'row',md:'row'}}}
+              >
+                <Button
+                  variant="contained"
                   sx={{
-                    width: "100%",
-                    height: { xs: "300px", sm: "350px", md: "450px" },
-                    mx: "auto",
+                    backgroundColor: "#BD6E73",
+                    "&:hover": { backgroundColor: "#9A5A61" },
+                    transition: "all 0.3s ease",
                   }}
-                  />
-              </Grid>
-            </Grid>
+                  href="/HalaMadiCV.pdf"
+                  download="Hala Madi CV.pdf"
+                >
+                  Download CV
+                </Button>
+                <Button
+                  sx={{
+                    color: "#BD6E73",
+                    fontSize: '16px',
+                    fontWeight: "500",
+                    "&:hover": {
+                      backgroundColor: "#F4E3E4",
+                      borderColor: "#BD6E73",
+                    },
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  <Link to="contact" smooth={true} duration={500} offset={-70}>
+                    Hire Me
+                  </Link>
+                </Button>
+              </Box>
+            </Box>
           </Container>
-                  </Element>
-          {/* About Me Section */}
-          <Element name="about-me">
-            <AboutMe />
-          </Element>
-          {/* Skills Section */}
-          <Element name="skills" >
-            <Skills />
-          </Element>
-          {/* Projects Section */}
-          <Element name="projects">
-            <Projects />
-          </Element>
-          {/* Contact Section */}
-          <Element name="contact">
-            <Contact />
-          </Element>
-        </Box>
+        </Element>
+      </Box>
+
+      {/* About Me Section */}
+      <Element name="about-me">
+        <AboutMe />
+      </Element>
+      {/* Skills Section */}
+      <Element name="skills">
+        <Skills />
+      </Element>
+      {/* Projects Section */}
+      <Element name="projects">
+        <Projects />
+      </Element>
+      {/* Contact Section */}
+      <Element name="contact">
+        <Contact />
+      </Element>
     </>
   );
 };

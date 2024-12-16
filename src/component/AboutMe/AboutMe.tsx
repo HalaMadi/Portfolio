@@ -3,14 +3,12 @@ import React from "react";
 import Grid from "@mui/material/Grid2";
 import AboutMePic from "../../assets/Hala-dev (1).png";
 import { StyledBox } from "./style";
-
+import { Link } from "react-scroll";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 const AboutMe: React.FC = () => {
-  const data = [
-    { label: "Years of Experience", value: 1 },
-    { label: "Completed Projects", value: 10 },
-    { label: "Ongoing Projects", value: 3 },
-  ];
-
   return (
     <>
       <StyledBox>
@@ -46,18 +44,6 @@ const AboutMe: React.FC = () => {
             flexDirection: { xs: "column", md: "row" },
           }}
         >
-          {/* Image Grid */}
-          <Grid size={{ xs: 6, md: 5 }}>
-            <Box
-              component="img"
-              src={AboutMePic}
-              sx={{
-                width: "100%",
-                height: "500px",
-                display: { xs: "none", md: "block" },
-              }}
-            />
-          </Grid>
           {/* Text Content Grid */}
           <Grid size={{ xs: 10, md: 6 }}>
             <Typography
@@ -79,76 +65,69 @@ const AboutMe: React.FC = () => {
               }}
               gutterBottom
             >
-              Experienced Frontend Developer with over a decade of professional
-              expertise in the field. Throughout my career, I have had the
-              privilege of collaborating with prestigious organizations,
-              contributing to their success and growth.
+              And <strong>Frontend Developer</strong> specializing in React.js
+              and TypeScript. Passionate about crafting seamless user
+              experiences, I build dynamic, user-friendly web applications with
+              a focus on clean, maintainable code. With a commitment to
+              delivering high-quality solutions that exceed expectations, I
+              bring enthusiasm, dedication, and a user-centered approach to
+              every project. My passion for frontend development drives me to
+              continuously innovate and create exceptional digital experiences.
             </Typography>
-            <Typography
+            <Divider sx={{ my: 2 }} />
+          </Grid>
+          {/* Image Grid */}
+          <Grid size={{ xs: 6, md: 5 }}>
+            <Box
+              component="img"
+              src={AboutMePic}
               sx={{
-                fontFamily: "Outfit",
-                fontSize: { xs: "16px", sm: "18px" },
+                width: { xs: "100%", sm: "80%", md: "100%" }, // Adjust width for different screen sizes
+                height: { xs: "auto", sm: "350px", md: "470px" }, // Make sure image scales responsively
+                mx: "auto", // Center the image
               }}
-            >
-              My passion for frontend development is not only reflected in my
-              extensive experience but also in the enthusiasm and dedication I
-              bring to each project.
-            </Typography>
-            <Divider sx={{ my: 4 }} />
-            {/* Data Display */}
-            <Grid
-              container
-              spacing={3}
-              justifyContent="space-between"
-              sx={{ mb: "10px" }}
-            >
-              {data.map((item, index) => (
-                <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexDirection: { xs: "row", md: "column" },
-                      alignItems: "center",
-                      padding: "20px",
-                      borderRadius: "12px",
-                      background: "linear-gradient(135deg, #f5f7fa, #F7E4DF)",
-                      transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                      "&:hover": {
-                        transform: "scale(1.05)",
-                      },
-                      gap: "6px",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        fontWeight: "bold",
-                        fontSize: { xs: "20px", md: "24px" },
-                        background: "linear-gradient(90deg, #ff6f61, #BD6E73)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        letterSpacing: "1px",
-                        textShadow: "1px 1px 4px rgba(0, 0, 0, 0.2)",
-                        fontFamily: "Kaushan Script, cursive",
-                      }}
-                    >
-                      +{item.value}
-                    </Typography>
-                    <Typography
-                      variant="subtitle1"
-                      sx={{
-                        fontSize: { xs: "14px", md: "16px" },
-                        fontWeight: "bold",
-                        color: "#6a7489",
-                        letterSpacing: "0.5px",
-                        fontFamily: "Outfit",
-                      }}
-                    >
-                      {item.label}
-                    </Typography>
-                  </Box>
-                </Grid>
-              ))}
-            </Grid>
+            />
+          </Grid>
+          {/* Data Display */}
+          <Grid container spacing={3} sx={{ mb: "10px" }}>
+            <Box display="flex" gap={2}>
+              <Link
+                target="_blank"
+                to={"https://www.facebook.com/hla.alzalaan"}
+              >
+                {" "}
+                <FacebookIcon
+                  fontSize="medium"
+                  sx={{ cursor: "pointer", color: "#333" }}
+                />
+              </Link>
+              <Link
+                target="_blank"
+                to={"https://www.facebook.com/hla.alzalaan"}
+              >
+                {" "}
+                <InstagramIcon
+                  fontSize="medium"
+                  sx={{ cursor: "pointer", color: "#333" }}
+                />
+              </Link>
+              <Link
+                target="_blank"
+                to={"https://www.facebook.com/hla.alzalaan"}
+              >
+                <LinkedInIcon
+                  fontSize="medium"
+                  sx={{ cursor: "pointer", color: "#333" }}
+                />
+              </Link>
+              <Link target="_blank" to={"https://github.com/HalaMadi"}>
+                {" "}
+                <GitHubIcon
+                  fontSize="medium"
+                  sx={{ cursor: "pointer", color: "#333" }}
+                />
+              </Link>
+            </Box>
           </Grid>
         </Grid>
       </StyledBox>

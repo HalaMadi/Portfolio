@@ -15,7 +15,7 @@ export const StyledAppBar = styled(AppBar)`
 export const RouterNavLink = styled(Link)`
   text-decoration: none;
   color: black;
-  font-weight: 600;
+  font-weight: 300;
   font-size: 24px;
   &.active {
     color: #bd6e73;

@@ -12,6 +12,8 @@ import trainingProject1 from "../../assets/trainingProject1.png";
 import Grid from "@mui/material/Grid2";
 import { StyledLink } from "./style";
 import TrainingManager from "../../assets/Training-Manager.png";
+import whetherApp from '../../assets/whetherApp.png'
+import blog from '../../assets/blog.png'
 import GitHubIcon from "@mui/icons-material/GitHub";
 import PublicIcon from "@mui/icons-material/Public";
 const Projects: React.FC = () => {
@@ -26,9 +28,23 @@ const Projects: React.FC = () => {
     {
       Name: "PTUK-Training-Manager",
       Description: "Graduation-Project",
-      src: TrainingManager,
+      src:TrainingManager ,
       codeLink: "https://github.com/PTUK-Training-Manager/Graduation-Project",
       Demo: "https://ptuk-trainerize.onrender.com/",
+    },
+    {
+      Name: "Whether app",
+      Description: "Whether app",
+      src: whetherApp,
+      codeLink: "https://github.com/HalaMadi/js-mini-projects",
+      Demo: "https://halamadi.github.io/js-mini-projects/",
+    },
+    {
+      Name: "Personal Blog",
+      Description: "Blog",
+      src: blog,
+      codeLink: "https://github.com/HalaMadi/React-project",
+      Demo: "https://react-project-hg42-ninnkjy4u-halamadis-projects.vercel.app/",
     },
   ];
 

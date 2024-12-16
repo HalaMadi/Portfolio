@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const StyledBox = styled(Box)`
   && {
-    background: #F7E4DF;
-    margin-top:125px 
+    margin-top:25px 
   }
 `;
