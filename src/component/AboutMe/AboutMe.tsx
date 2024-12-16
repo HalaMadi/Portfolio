@@ -82,9 +82,9 @@ const AboutMe: React.FC = () => {
               component="img"
               src={AboutMePic}
               sx={{
-                width: { xs: "100%", sm: "80%", md: "100%" }, // Adjust width for different screen sizes
-                height: { xs: "auto", sm: "350px", md: "470px" }, // Make sure image scales responsively
-                mx: "auto", // Center the image
+                width: { xs: "100%", md: "90%" },
+                height: { xs: "auto", sm: "350px", md: "470px" },
+                mx: "auto",
               }}
             />
           </Grid>

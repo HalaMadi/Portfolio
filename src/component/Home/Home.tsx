@@ -29,9 +29,6 @@ const Home: React.FC = () => {
                 alignItems: "center",
                 m: "30px",
                 p: "20px",
-                // backgroundColor: "#F9F5F6",
-                // borderRadius: "12px",
-                // boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.1)",
               }}
             >
               <Typography
