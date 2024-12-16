@@ -14,7 +14,7 @@ const Home: React.FC = () => {
         sx={{
           backgroundImage: `url(${svgPic})`,
           backgroundSize: "cover",
-          minHeight: {sm:'50vh',md:'90vh'},
+          minHeight: { sm: "50vh", md: "90vh" },
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -107,7 +107,11 @@ const Home: React.FC = () => {
                   duration: 1,
                   opacity: { duration: 0.6 },
                 }}
-                sx={{ mt: "30px", display: "flex",flexDirection:{xs:'column',sm:'row',md:'row'}}}
+                sx={{
+                  mt: "30px",
+                  display: "flex",
+                  flexDirection: { xs: "column", sm: "row", md: "row" },
+                }}
               >
                 <Button
                   variant="contained"
@@ -124,7 +128,7 @@ const Home: React.FC = () => {
                 <Button
                   sx={{
                     color: "#BD6E73",
-                    fontSize: '16px',
+                    fontSize: "16px",
                     fontWeight: "500",
                     "&:hover": {
                       backgroundColor: "#F4E3E4",

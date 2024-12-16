@@ -19,7 +19,10 @@ const Contact: React.FC = () => {
       .required("Message is required"),
   });
 
-  const handleSubmit = async (values: any, { resetForm }: any) => {
+  const handleSubmit = async (
+    values: { [s: string]: unknown } | ArrayLike<unknown>,
+    { resetForm }: any
+  ) => {
     const formData = new FormData();
     Object.entries(values).forEach(([key, value]) => {
       formData.append(key, value as string);
@@ -45,7 +48,7 @@ const Contact: React.FC = () => {
         text: "Your message has been sent successfully.",
         icon: "success",
       });
-      resetForm(); 
+      resetForm();
     } else {
       Swal.fire({
         title: "Error!",

@@ -12,8 +12,8 @@ import trainingProject1 from "../../assets/trainingProject1.png";
 import Grid from "@mui/material/Grid2";
 import { StyledLink } from "./style";
 import TrainingManager from "../../assets/Training-Manager.png";
-import whetherApp from '../../assets/whetherApp.png'
-import blog from '../../assets/blog.png'
+import whetherApp from "../../assets/whetherApp.png";
+import blog from "../../assets/blog.png";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import PublicIcon from "@mui/icons-material/Public";
 const Projects: React.FC = () => {
@@ -28,7 +28,7 @@ const Projects: React.FC = () => {
     {
       Name: "PTUK-Training-Manager",
       Description: "Graduation-Project",
-      src:TrainingManager ,
+      src: TrainingManager,
       codeLink: "https://github.com/PTUK-Training-Manager/Graduation-Project",
       Demo: "https://ptuk-trainerize.onrender.com/",
     },
@@ -49,14 +49,19 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <Container >
-      <Box sx={{ flexGrow: 1, mt: { xs: "0px", sm: "30px", md: "60px" }, mb: "150px", }}>
+    <Container>
+      <Box
+        sx={{
+          flexGrow: 1,
+          mt: { xs: "0px", sm: "30px", md: "60px" },
+          mb: "150px",
+        }}
+      >
         <Box
           sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-           
           }}
         >
           <Typography

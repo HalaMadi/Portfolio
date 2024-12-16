@@ -18,8 +18,8 @@ const Footer: React.FC = () => {
         backgroundImage:
           "radial-gradient(125% 125% at 50% 10%, #fff 40%, #BD6E73)",
         py: 4,
-        mt: "auto", 
-        zIndex: 10, 
+        mt: "auto",
+        zIndex: 10,
       }}
     >
       <Container>

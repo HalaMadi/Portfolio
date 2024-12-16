@@ -4,9 +4,7 @@ import "./index.css";
 const App: React.FC = () => {
   return (
     <>
-     
-        <Routes />
-   
+      <Routes />
     </>
   );
 };

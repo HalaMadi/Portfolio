@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 export const StyledLink = styled(Link)`
   && {
-    text-decoration:none;
+    text-decoration: none;
     padding: 10px;
     border-radius: 10px;
-    &:hover{
-       color:#BD6E73;
+    &:hover {
+      color: #bd6e73;
     }
   }
 `;
