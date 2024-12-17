@@ -1,50 +1,33 @@
-# React + TypeScript + Vite
+# Portfolio  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio showcasing my skills, projects, and contact information. This project is built with React, TypeScript, and Vite, utilizing popular libraries and tools to deliver a visually appealing and interactive user experience.  
 
-Currently, two official plugins are available:
+## Features  
+- **Responsive Design**: Adapts seamlessly to all screen sizes and devices.  
+- **Smooth Animations**: Integrated with Framer Motion for elegant animations.  
+- **Interactive UI**: Includes smooth scrolling, carousels, and interactive form handling.  
+- **Custom Styling**: Combines MUI,and styled-components for a unique design.  
+- **Optimized Performance**: Powered by Vite for fast builds and previews.
+- 
+## Demo  
+🚀 **[Live Demo] [https://your-portfolio-demo-link.vercel.app/](https://portfolio-hjpm-8kksklu03-halamadis-projects.vercel.app/)**  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check out the live version of this portfolio to explore its features and design.
+## Tech Stack  
+### Frontend  
+- **Framework**: React (with TypeScript)  
+- **Styling**: MUI, styled-components, @emotion  
+- **Animations**: Framer Motion  
+- **Routing**: React Router Dom  
+- **Scrolling**: React Scroll  
 
-## Expanding the ESLint configuration
+### Utilities  
+- **Validation**: Yup  
+- **Carousel**: Swiper.js  
+- **Alerts**: SweetAlert2  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Development Tools  
+- Vite  
+- ESLint  
+- TypeScript  
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
