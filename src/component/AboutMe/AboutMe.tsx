@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid2";
 import AboutMePic from "../../assets/Hala-dev (1).png";
 import { StyledBox } from "./style";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
+// import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 const AboutMe: React.FC = () => {
@@ -100,17 +100,7 @@ const AboutMe: React.FC = () => {
 
               <a
                 target="_blank"
-                href={"https://www.facebook.com/hla.alzalaan"}
-              >
-                {" "}
-                <InstagramIcon
-                  fontSize="medium"
-                  sx={{ cursor: "pointer", color: "#333" }}
-                />
-              </a>
-              <a
-                target="_blank"
-                href={"https://www.facebook.com/hla.alzalaan"}
+                href={"https://www.linkedin.com/in/hala-madi-a3964b239/"}
               >
                 <LinkedInIcon
                   fontSize="medium"
