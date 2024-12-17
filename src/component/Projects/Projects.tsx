@@ -44,7 +44,7 @@ const Projects: React.FC = () => {
       Description: "Blog",
       src: blog,
       codeLink: "https://github.com/HalaMadi/React-project",
-      Demo: "https://react-project-hg42-ninnkjy4u-halamadis-projects.vercel.app/",
+      Demo: "https://react-project-hg42.vercel.app/",
     },
   ];
 
