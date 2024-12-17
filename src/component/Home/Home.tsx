@@ -6,7 +6,7 @@ import Contact from "../Contact/Contact";
 import Projects from "../Projects/Projects";
 import { Element, Link } from "react-scroll";
 import { motion } from "framer-motion";
-import svgPic from "/public/polygon-scatter-haikei.svg";
+import svgPic from "/polygon-scatter-haikei.svg";
 const Home: React.FC = () => {
   return (
     <>
