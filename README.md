@@ -10,7 +10,7 @@ A modern, responsive portfolio showcasing my skills, projects, and contact infor
 - **Optimized Performance**: Powered by Vite for fast builds and previews.
 - 
 ## Demo  
-🚀 **[Live Demo] [https://your-portfolio-demo-link.vercel.app/](https://portfolio-hjpm-8kksklu03-halamadis-projects.vercel.app/)**  
+🚀 **[Live Demo] [https://portfolio-iota-pink-12.vercel.app/]**  
 
 Check out the live version of this portfolio to explore its features and design.
 ## Tech Stack  
