@@ -3,7 +3,6 @@ import React from "react";
 import Grid from "@mui/material/Grid2";
 import AboutMePic from "../../assets/Hala-dev (1).png";
 import { StyledBox } from "./style";
-import { Link } from "react-scroll";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -91,42 +90,39 @@ const AboutMe: React.FC = () => {
           {/* Data Display */}
           <Grid container spacing={3} sx={{ mb: "10px" }}>
             <Box display="flex" gap={2}>
-              <Link
-                target="_blank"
-                to={"https://www.facebook.com/hla.alzalaan"}
-              >
+              <a href="https://www.facebook.com/hla.alzalaan" target="_blank">
                 {" "}
                 <FacebookIcon
                   fontSize="medium"
                   sx={{ cursor: "pointer", color: "#333" }}
                 />
-              </Link>
-              <Link
+              </a>
+
+              <a
                 target="_blank"
-                to={"https://www.facebook.com/hla.alzalaan"}
+                href={"https://www.facebook.com/hla.alzalaan"}
               >
                 {" "}
                 <InstagramIcon
                   fontSize="medium"
                   sx={{ cursor: "pointer", color: "#333" }}
                 />
-              </Link>
-              <Link
+              </a>
+              <a
                 target="_blank"
-                to={"https://www.facebook.com/hla.alzalaan"}
+                href={"https://www.facebook.com/hla.alzalaan"}
               >
                 <LinkedInIcon
                   fontSize="medium"
                   sx={{ cursor: "pointer", color: "#333" }}
                 />
-              </Link>
-              <Link target="_blank" to={"https://github.com/HalaMadi"}>
-                {" "}
+              </a>
+              <a target="_blank" href={"https://github.com/HalaMadi"}>
                 <GitHubIcon
                   fontSize="medium"
                   sx={{ cursor: "pointer", color: "#333" }}
                 />
-              </Link>
+              </a>
             </Box>
           </Grid>
         </Grid>
