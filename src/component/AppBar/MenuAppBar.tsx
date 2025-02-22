@@ -7,11 +7,12 @@ import {
   Container,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { RouterNavLink, StyledAppBar } from "./style";
+import {  RouterNavLink, StyledAppBar } from "./style";
 import Logo from "../../assets/Hala-dev.png";
 import React, { useState, useEffect } from "react";
-// import { Link } from "react-scroll";
-const pages = ["Home", "About me", "Skills", "Projects", "Contact"];
+import svgPic from "/polygon-scatter-haikei.svg";
+
+const pages = ["Home", "About me", "Skills", "Projects","Contact"];
 const MenuAppBar: React.FC = () => {
   const [open, setOpen] = React.useState(false);
   const toggleDrawer = (newOpen: boolean) => () => {
@@ -74,7 +75,7 @@ const MenuAppBar: React.FC = () => {
                 <MenuIcon />
               </IconButton>
               <Drawer anchor="top" open={open} onClose={toggleDrawer(false)}>
-                <Stack sx={{ padding: 2, textAlign: "center" }} spacing={2}>
+                <Stack sx={{ padding: 2, textAlign: "center",   backgroundImage: `url(${svgPic})`,     }} spacing={2}>
                   {pages.map((page) => (
                     <RouterNavLink
                       key={page}
@@ -94,7 +95,8 @@ const MenuAppBar: React.FC = () => {
                 justifyContent: "flex-end",
                 flexGrow: 1,
                 display: { xs: "none", md: "flex" },
-                gap: 4,
+                gap: 6,
+                alignItems: "center",
               }}
             >
               {pages.map((page) => (
